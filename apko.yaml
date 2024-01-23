@@ -7,8 +7,11 @@ contents:
   packages:
     - realtime@local
     - wolfi-base
+    - bash
+    - pixi
+    - posix-libc-utils
 
-cmd: /workspace/realtime/server
+cmd: /bin/bash
 
 archs:
 - x86_64
