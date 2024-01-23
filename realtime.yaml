@@ -12,8 +12,9 @@ environment:
       - wolfi-base
       - git
       - bun
-      - poetry
-
+      - py3-virtualenv
+      - py3-pip
+      - nodejs
 pipeline:
   - name: build it
     runs: |
@@ -21,7 +22,14 @@ pipeline:
       git clone https://github.com/codegod100/realtime.git $WORKDIR
       cd $WORKDIR
       bun install
-      bun build.js
-      poetry install
-
+      node build.js
+      mkdir -p /usr/local/lib
+      npx -y tailwindcss -i ./src/style.css -o ./static/style.css
+      virtualenv venv
+      echo "#!/workspace/realtime/venv/bin/python3" > "${WORKDIR}/server"
+      cat app.py >> "${WORKDIR}/server"
+      chmod +x "${WORKDIR}/server"
+      
+      source venv/bin/activate
+      pip install -r requirements.txt
 

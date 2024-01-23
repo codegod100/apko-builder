@@ -6,7 +6,10 @@ contents:
     - '@local packages'
   packages:
     - wolfi-base
+    - py3-poetry
     - realtime@local
+    - pixi
+    - posix-libc-utils
 
 cmd: /bin/sh -l
 
