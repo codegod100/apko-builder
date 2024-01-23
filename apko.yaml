@@ -5,11 +5,9 @@ contents:
     - https://packages.wolfi.dev/os
     - '@local packages'
   packages:
-    - wolfi-base
-    - py3-poetry
     - realtime@local
-    - pixi
-    - posix-libc-utils
+    - python3
+    - busybox
 
 cmd: /bin/sh -l
 
