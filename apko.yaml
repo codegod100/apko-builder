@@ -6,10 +6,9 @@ contents:
     - '@local packages'
   packages:
     - realtime@local
-    - python3
-    - busybox
+    - wolfi-base
 
-cmd: /bin/sh -l
+cmd: /workspace/realtime/server
 
 archs:
 - x86_64
